@@ -19,6 +19,6 @@ class JudgeTest {
         Judge judge = new Judge();
         Result result = judge.getResult(move1, move2);
         System.out.println(result.getWinner());
-        assertEquals(result.getWinner(),"Player1 Win");
+        assertEquals(result.getWinner(),"Player2 Win");
     }
 }

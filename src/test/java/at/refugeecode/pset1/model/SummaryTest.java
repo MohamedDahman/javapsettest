@@ -42,7 +42,7 @@ public class SummaryTest {
     public void getMaleFemaleRatio() {
         Summary summarize = movieDatabaseSummarizer.summarize();
         String maleFemaleRatio = summarize.getMaleFemaleRatio();
-        System.out.println(maleFemaleRatio);
+        //System.out.println(maleFemaleRatio);
         assertEquals("Man0.6041223230963034 Woamn0.39587767690369663",maleFemaleRatio);
     }
 
