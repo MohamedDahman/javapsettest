@@ -1,8 +1,11 @@
 package at.refugeecode.pset2.model;
 
+import org.springframework.stereotype.Component;
+
 import  java.util.Collections;
 import java.util.List;
 
+@Component
 public class ComputerPlayer implements Player {
     private Move movetype;
     @Override

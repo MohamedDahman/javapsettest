@@ -1,7 +1,9 @@
 package at.refugeecode.pset1.model;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 public class MovieActors {
     Integer id;
     List<Actors> actorList;

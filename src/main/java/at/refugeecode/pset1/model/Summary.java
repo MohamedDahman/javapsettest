@@ -1,9 +1,11 @@
 package at.refugeecode.pset1.model;
 
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
-
+@Component
 public class Summary {
 
     private List<Movie> topMovieRate;

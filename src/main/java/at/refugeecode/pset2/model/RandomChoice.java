@@ -1,10 +1,12 @@
 package at.refugeecode.pset2.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+@Component
 public class RandomChoice {
 
     public Move getOneAtRandom() {

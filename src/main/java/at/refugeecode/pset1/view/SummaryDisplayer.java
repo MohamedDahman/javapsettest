@@ -2,7 +2,9 @@ package at.refugeecode.pset1.view;
 
 
 import at.refugeecode.pset1.model.Summary;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SummaryDisplayer {
 
     public void display(Summary summary) {

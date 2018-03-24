@@ -6,13 +6,14 @@ import at.refugeecode.pset1.model.MovieActors;
 import at.refugeecode.pset1.model.Summary;
 import at.refugeecode.pset1.parser.MovieActorParser;
 import at.refugeecode.pset1.parser.MovieParser;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 
-
+@Component
 public class MovieDatabaseSummarizer {
 
     public Summary summarize() {

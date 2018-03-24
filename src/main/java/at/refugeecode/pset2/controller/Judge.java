@@ -2,8 +2,9 @@ package at.refugeecode.pset2.controller;
 
 import at.refugeecode.pset2.model.Move;
 import at.refugeecode.pset2.model.Result;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Judge {
 
     public Result getResult(Move move1, Move move2){

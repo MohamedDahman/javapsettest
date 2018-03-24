@@ -1,5 +1,8 @@
 package at.refugeecode.pset1.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Actors {
     private String name;
     private int gender;

@@ -1,8 +1,10 @@
 package at.refugeecode.pset2.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Optional;
 import java.util.Scanner;
-
+@Component
 public class HumanPlayer implements Player {
     private Scanner scanner = new Scanner(System.in);
     private Move movetype;

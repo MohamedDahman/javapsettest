@@ -2,6 +2,7 @@ package at.refugeecode.pset1.parser;
 
 import at.refugeecode.pset1.model.Actors;
 import at.refugeecode.pset1.model.MovieActors;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+@Component
 public class MovieActorParser {
 
 

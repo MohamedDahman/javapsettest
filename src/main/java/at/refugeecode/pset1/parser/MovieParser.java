@@ -1,6 +1,7 @@
 package at.refugeecode.pset1.parser;
 
 import at.refugeecode.pset1.model.Movie;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+@Component
 public class MovieParser {
 
 
