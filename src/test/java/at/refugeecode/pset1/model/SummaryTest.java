@@ -13,44 +13,38 @@ import static org.junit.Assert.*;
 
 public class SummaryTest {
 
-  /*  MovieActorParser movieActorParser = new MovieActorParser();
-    List<MovieActors> moviesActor = movieActorParser.getMoviesActor("src/main/java/at/refugeecode/pset1/data/actors.csv");
-*/
-
-
-/*
-    MovieParser movieParser = new MovieParser();
-    List<Movie> movieList = movieParser.getMovies("src/at/refugeecode/pset1/data/movies.csv");
-*/
-
-    MovieDatabaseSummarizer movieDatabaseSummarizer ;
-
-    @Before
-    public void SummaryTest() {
-        movieDatabaseSummarizer = new MovieDatabaseSummarizer();
-    }
-
+    Summary summary;
 
     @Test
-    public void getMostMovieGenres() {
-        Summary summarize = movieDatabaseSummarizer.summarize();
-        List<String> mostMovieGenres = summarize.getMostMovieGenres();
-        assertEquals(Arrays.asList("Drama 14495","Comedy 8955"),mostMovieGenres);
+    public void testMoiveGeneres(){
+        Summary summary = new Summary();
+        List<String> listGeneres = new ArrayList<>();
+        listGeneres.add("Drama 50");
+        listGeneres.add("Comedy 40");
+        //Summary summary = new Summary();
+        summary.setMostMovieGenres(listGeneres);
+        assertEquals(Arrays.asList("Drama 50","Comedy 40"),summary.getMostMovieGenres());
     }
 
     @Test
-    public void getMaleFemaleRatio() {
-        Summary summarize = movieDatabaseSummarizer.summarize();
-        String maleFemaleRatio = summarize.getMaleFemaleRatio();
-        //System.out.println(maleFemaleRatio);
-        assertEquals("Man0.6041223230963034 Woamn0.39587767690369663",maleFemaleRatio);
+    public void testMaleFemaileRatio(){
+        Summary summary = new Summary();
+        summary.setMaleFemaleRatio("Man 0.66 Woman0.34");
+        assertEquals("Man 0.66 Woman0.34",summary.getMaleFemaleRatio());
     }
 
     @Test
-    public void getMostHiredActors() {
-        Summary summarize = movieDatabaseSummarizer.summarize();
-        List<String> mostHiredActors = summarize.getMostHiredActors();
+    public void testmostHiredActors(){
 
+        Summary summary = new Summary();
+
+        List<String> mostHiredActors = new ArrayList<>();
+        mostHiredActors.add("Bess Flowers 81");
+        mostHiredActors.add("Christopher Lee 69");
+        mostHiredActors.add("Grey Griffin 58");
+        mostHiredActors.add("Danny Trejo 54");
+        mostHiredActors.add("Eric Roberts 52");
+        summary.setMostHiredActors(mostHiredActors);
 
         List<String> theresult= new ArrayList<>();
         theresult.add("Bess Flowers 81");
@@ -58,19 +52,39 @@ public class SummaryTest {
         theresult.add("Grey Griffin 58");
         theresult.add("Danny Trejo 54");
         theresult.add("Eric Roberts 52");
-        assertEquals(theresult,mostHiredActors);
+
+        assertEquals(theresult,summary.getMostHiredActors());
+
+
+
+        //summary.set
     }
 
 
     @Test
-    public void getTopMovieRate() {
-        Summary summarize = movieDatabaseSummarizer.summarize();
-        List<Movie> topMovieRate = summarize.getTopMovieRate();
-        List<String> collect = topMovieRate.stream().map(e -> e.getTitle()).collect(Collectors.toList());
+    public void TestTopMovieRate() {
+        Summary summary = new Summary();
 
-        List<String> list = Arrays.asList("Reckless", "Girl in the Cadillac", "The Haunted World of Edward D. Wood, Jr.", "Carmen Miranda: Bananas Is My Business", "Other Voices Other Rooms");
-        assertEquals(list,collect);
+        //summary.setTopMovieRate()
+       List<Movie> movieList = new ArrayList<>();
 
+       Movie movie1 = new Movie();
+       movie1.setTitle("Reckless");
+       movie1.setGenres(Arrays.asList("Comody"));
+       movie1.setVote_average((float) 10);
 
+       Movie movie2 = new Movie();
+       movie2.setTitle("Girl in the Cadillac");
+       movie2.setGenres(Arrays.asList("Comody"));
+       movie2.setVote_average((float) 8);
+       movieList.add(movie1);
+       movieList.add(movie2);
+       summary.setTopMovieRate(movieList);
+
+       movieList.add(movie1);
+       movieList.add(movie2);
+
+       List<String> list = Arrays.asList("Reckless", "Girl in the Cadillac");
+       assertEquals(movieList,summary.getTopMovieRate());
     }
 }
